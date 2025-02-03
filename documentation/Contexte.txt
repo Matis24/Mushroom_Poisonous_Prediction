@@ -1,0 +1,28 @@
+Contexte:
+Le monde des champignons est d'une diversité impressionnante et difficile à quantifier précisément. On estime qu'il existe entre 10 et 15 millions d'espèces de champignons dans le monde, bien que seulement 150 000 aient été formellement identifiées et décrites par les scientifiques. Ce vaste groupe inclut des moisissures, des levures, ainsi que des champignons comestibles, qui sont au cœur de ce projet. Ces derniers sont classés dans différentes familles, telles que les Boletaceae (bolets), les Agaricaceae (champignons de Paris), etc. On estime qu'entre 1 500 et 2 000 espèces de champignons sont toxiques, certaines pouvant causer de graves intoxications voire être mortelles si elles sont consommées.
+
+Problématique
+Est-il possible, à partir d'une simple photo, d'identifier avec précision la famille, l'espèce ou la toxicité d'un champignon ?
+
+Description des données (+ lien web) : taille des jeux de données, nombre de variables, natures des variables, taux de variables manquantes, ...
+Images de familles de champignons : 
+15 familles, 10 000 images, 128*128, 
+https://images.cv/dataset/mushroom-image-classification-dataset
+
+Toxicité d'un champignon selon caractéristiques : 
+21 variables descriptives quantitatives et qualitatives (dont consommable ou non) mais pas l'information de l'espèce.
+https://archive.ics.uci.edu/dataset/73/mushroom
+
+Information sur chaque espèce : site à scrapper
+https://www.mushroom.world/mushrooms/namelist
+
+
+Méthodologie envisagée
+Création d'une application Streamlit pour avoir une interface utilisateur et pouvoir prendre une photo.
+
+1) YOLO : Vérifie s'il y a un champignon sur la photo.
+2) CNN/ViT : Identification de la famille auquel le champignon appartient
+3.a) Si on arrive à scrapper des photos de toutes les espèces d'une famille on peut entrainer un modèle pour identifier l'espèce et on sait scientifiquement s'il est toxique ou non
+3.b) L'utilisateur peut ajouter les dimensions approximatives du champignon et on utilise un modèle entrainé sur les données caractéristiques pour faire de la classification binaire.
+
+Bonus) Graphe des familles, sous familles, espèces des champignons. Localisation des champignons sur une carte ...
