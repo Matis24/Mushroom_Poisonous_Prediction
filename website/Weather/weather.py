@@ -53,7 +53,7 @@ def show_weather():
     print(weather_data)
     if weather_data:
         # Extraction des informations
-        temperature = round(weather_data['main']['temp']-273.15,1)
+        temperature = round(weather_data['weather']['temp']-273.15,1)
         description = weather_data['weather'][0]['description']
         icon = weather_data['weather'][0]['icon']
         city = weather_data['name']
