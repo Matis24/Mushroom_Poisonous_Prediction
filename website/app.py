@@ -2,9 +2,9 @@ import streamlit as st
 from tabs.picture import show_predictions
 from tabs.map import show_map
 from tabs.presentation import presentation
-# from Weather.weather import show_weather
+#from Weather.weather import show_weather
 
-# python -m streamlit run Poisonous_Mushroom_Detection/Website/app.py
+# python -m streamlit run website/app.py
 st.markdown(
     """
     <style>
@@ -25,6 +25,7 @@ st.markdown(
     unsafe_allow_html=True
 )
 
+#show_weather()
     
 # Afficher l'application avec un fond dynamique
 

@@ -7,7 +7,7 @@ import base64
 from pathlib import Path
 
 #%% Récupération de la clé API
-load_dotenv("./Poisonous_Mushroom_Detection/Website/.env")
+load_dotenv("./.env")
 API_KEY = os.getenv("API_KEY_WEATHER")
 
 #%% Coordonnées des villes
@@ -50,10 +50,10 @@ def show_weather():
     lon = cities[city_name]["longitude"]
     
     weather_data = get_weather(lat, lon, API_KEY)
-
+    print(weather_data)
     if weather_data:
         # Extraction des informations
-        temperature = round(weather_data['main']['temp']-273.15,1)
+        temperature = round(weather_data['weather']['temp']-273.15,1)
         description = weather_data['weather'][0]['description']
         icon = weather_data['weather'][0]['icon']
         city = weather_data['name']
@@ -79,7 +79,7 @@ def show_weather():
         return base64.b64encode(data).decode()
 
     # Charger et encoder le GIF
-    gif_path = Path("./Poisonous_Mushroom_Detection/Website/Weather/rain.gif")
+    gif_path = Path("./Weather/rain.gif")
     gif_base64 = get_base64(gif_path)
 
     # Appliquer le GIF en arrière-plan

@@ -24,7 +24,7 @@ Meg Risdal (Admin)
 Sous la responsabilité de Mathieu Andro
 
 #### Cap Shape
-![alt text](./image_info/cap_shape.png)
+![alt text](./image/cap_shape.png)
 
 ### Picture of Mushroom :
 data_image : https://images.cv/dataset/mushroom-image-classification-dataset
